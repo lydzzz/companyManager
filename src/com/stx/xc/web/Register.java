@@ -22,19 +22,14 @@ public class Register extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String userName = request.getParameter("username");// 取得用户名
 		String password = request.getParameter("password");// 取得密码
-		String confirm = request.getParameter("confirm");
-		if (!password.equals(confirm)) {
-			response.sendRedirect("diffPwd.jsp");
-		} else {
-			DBUtil db = new DBUtil();// 构建数据库对象
+		DBUtil db = new DBUtil();// 构建数据库对象
 
-			boolean canRegister = db.register(userName, password);
-			if (canRegister) {// 根据登陆情况，跳转页面
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/commonMenu.jsp");
-				dispatcher.forward(request, response);
-			} else {
-				response.sendRedirect("rename.jsp");
-			}
+		boolean canRegister = db.register(userName, password);
+		if (canRegister) {// 根据登陆情况，跳转页面
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/commonMenu.jsp");
+			dispatcher.forward(request, response);
+		} else {
+			response.sendRedirect("rename.jsp");
 		}
 	}
 

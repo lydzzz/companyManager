@@ -10,10 +10,6 @@
 <meta name="description" content="描述" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/pintuer/pintuer.css">
-<script src="/pintuer/jquery.js"></script>
-<script src="/pintuer/pintuer.js"></script>
-</head>
 <link rel="stylesheet" href="pintuer/pintuer.css">
 <script src="pintuer/jquery.js"></script>
 <script src="pintuer/pintuer.js"></script>
@@ -21,20 +17,6 @@
 </head>
 <body>
 
-	<style type="text/css">
-/*特别说明，验证码样式不包含在拼图pintuer.css文件内，需要自己添加到自己的style.css文件中，若要使用登录模块，需复制.passcode样式。*/
-.passcode {
-	position: absolute;
-	right: 0;
-	top: 0;
-	height: 32px;
-	margin: 1px;
-	border-left: solid 1px #ddd;
-	text-align: center;
-	line-height: 32px;
-	border-radius: 0 4px 4px 0;
-}
-</style>
 	<div align="center">
 		<form action="/SuperCompanyManager/LoginServlet" method="post">
 			<div class="panel padding" style="width: 450px; text-align: left;">
@@ -49,8 +31,8 @@
 						<div class="field field-icon-right">
 							<input type="text" class="input" name="username"
 								placeholder="登录账号"
-								data-validate="required:请填写账号,length#>=5:账号长度不符合要求" /> 
-								<span class="icon icon-user"></span>
+								data-validate="required:请填写账号,length#>=5:账号长度不符合要求" /> <span
+								class="icon icon-user"></span>
 						</div>
 					</div>
 					<div class="form-group">
