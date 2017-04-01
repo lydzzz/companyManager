@@ -41,6 +41,7 @@ public class DBUtil {
 	public void close() {
 		try {
 			stmt.close();
+			stmt = null;
 			con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
