@@ -1,37 +1,25 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>登陆成功</title>
-</head>
-<body>
-	欢迎你！尊贵的管理员！
 
-	<br>
-	<%
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-		out.println(df.format(new Date()));
-	%>
-	<br>
-	<form action="/SuperCompanyManager/searchServlet" method="POST">
-		请输入你想查询的企业的关键字：
-		<br>
-		<input type="text" name="key" />
-		<br>
-		<input type="submit" value="查询">
-		<br>
-		<a href="login.jsp">这里</a> 重新登陆
-	</form>
+<form action="/SuperCompanyManager/searchServlet" method="POST">
+	<div class="" style="padding: 30px;">
+		<div class="label">
+			<label for="name"> 这是个神奇的搜索，请输入关键字 </label>
+		</div>
+		<div class="form-group">
+			<div class="field field-icon-right">
+				<input type="text" class="input" name="key" maxlength="50"
+					data-validate="required:请填写关键字,length#>=1: 不能为空"
+					placeholder="请输入你想查询的关键字	">
+			</div>
+		</div>
 
-	<br>
 
-	<a href="register.jsp">这里</a> 注册
-	<br>
-	<a href="login.jsp">这里</a> 重新登陆
 
-</body>
-</html>
+		<div class="form-group">
+			<div class="field">
+				<button class="button button-block bg-main text-big">搜一下试试</button>
+			</div>
+		</div>
+	</div>
+</form>

@@ -1,46 +1,74 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>登陆成功</title>
-</head>
-<body>
-	欢迎你！尊贵的管理员！
+<form action="/SuperCompanyManager/insertServlet" method="POST">
+	<div class="" style="padding: 30px;">
+		<div class="label">
+			<label for="name"> 公司名称 </label>
+		</div>
+		<div class="form-group">
+			<div class="field field-icon-right">
+				<input type="text" class="input" name="name" maxlength="50"
+					data-validate="required:请填写公司名称,length#>=1:名称长度不符合要求"
+					placeholder="请输入公司名称">
+			</div>
+		</div>
 
-	<br>
-	<%
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-		out.println(df.format(new Date()));
-	%>
-	<br>
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	<form action="/SuperCompanyManager/insertServlet" method="POST">
-		请输入你想插入的企业的信息：
-		<br>
-		公司名称： <input type="text" name="name" />
-		<br>
-		公司类型： <input type="text" name="type" />
-		<br>
-		公司人数： <input type="text" name="numOfPeo" />
-		<br>
-		公司介绍： <input type="text" name="introduction" />
-		<br>
-		公司登记日期：<input type="text" name="date" />
-		<br>
-		<input type="submit" value="提交">
-		<br>
-		<a href="login.jsp">这里</a> 重新登陆
-	</form>
 
-	<br>
+		<div class="label">
+			<label for="name"> 公司类型 </label>
+		</div>
+		<div class="form-group">
+			<div class="field field-icon-right">
+				<input type="text" class="input" name="type" maxlength="50"
+					data-validate="required:请填写公司类型,length#>=1:类型长度不符合要求"
+					placeholder="请输入公司类型">
+			</div>
+		</div>
+		<div class="label">
+			<label for="name"> 公司人数 </label>
+		</div>
+		<div class="form-group">
+			<div class="field field-icon-right">
+				<input type="text" class="input" name="numOfPeo" maxlength="6"
+					onkeyup="value=this.value.replace(/\D+/g,'')"
+					data-validate="required:请填写公司人数,length#>=1:人数不符合要求"
+					placeholder="请输入公司人数">
+			</div>
+		</div>
+		<div class="label">
+			<label for="name"> 公司介绍</label>
+		</div>
+		<div class="form-group">
+			<div class="field field-icon-right">
+				<input type="text" class="input" name="introduction" maxlength="50"
+					data-validate="required:请填写公司介绍,length#>=1:介绍长度不符合要求"
+					placeholder="请输入公司介绍">
+			</div>
+		</div>
+		<div class="label">
+			<label for="name"> 公司登记日期（年份） </label>
+		</div>
+		<div class="form-group">
+			<div class="field field-icon-right">
+				<input type="text" class="input" name="date" maxlength="4"
+					onkeyup="value=this.value.replace(/\D+/g,'')"
+					data-validate="required:请填写登记年份,length#>=4:这个时间是不是太古老了"
+					placeholder="请输入公司登记日期">
+			</div>
+		</div>
 
-	<a href="register.jsp">这里</a> 注册
-	<br>
-	<a href="login.jsp">这里</a> 重新登陆
 
-</body>
-</html>
+		<div class="form-group">
+			<div class="field">
+				<button class="button button-block bg-main text-big">立即添加</button>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="field text-center">
+				<p class="text-muted text-center">
+					<a href="login.jsp">重新登陆</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</form>

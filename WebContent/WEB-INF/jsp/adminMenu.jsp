@@ -40,81 +40,23 @@
 		</div>
 		<div class="tab-body tab-body-bordered">
 			<div class="tab-panel active" id="insert">
-				<br>
-				<form action="/SuperCompanyManager/insertServlet" method="POST">
-					<div class="" style="padding: 30px;">
-						<div class="label">
-							<label for="name"> 公司名称 </label>
-						</div>
-						<div class="form-group">
-							<div class="field field-icon-right">
-								<input type="text" class="input" name="name" maxlength="50"
-									data-validate="length#<50:字数在0-50个" placeholder="请输入公司名称">
-							</div>
-						</div>
-
-
-						<div class="label">
-							<label for="name"> 公司类型 </label>
-						</div>
-						<div class="form-group">
-							<div class="field field-icon-right">
-								<input type="text" class="input" name="type" maxlength="50"
-									data-validate="length#<50:字数在0-50个" placeholder="请输入公司类型">
-							</div>
-						</div>
-						<div class="label">
-							<label for="name"> 公司人数 </label>
-						</div>
-						<div class="form-group">
-							<div class="field field-icon-right">
-								<input type="text" class="input" name="numOfPeo" maxlength="50"
-								onkeyup="value=this.value.replace(/\D+/g,'')"
-									data-validate="length#<7:你骗我吧，人数不可能超过1000000" placeholder="请输入公司人数">
-							</div>
-						</div>
-						<div class="label">
-							<label for="name"> 公司介绍</label>
-						</div>
-						<div class="form-group">
-							<div class="field field-icon-right">
-								<input type="text" class="input" name="introduction" maxlength="50"
-									data-validate="length#<50:字数在0-50个" placeholder="请输入公司介绍">
-							</div>
-						</div>
-						<div class="label">
-							<label for="name"> 公司登记日期（年份） </label>
-						</div>
-						<div class="form-group">
-							<div class="field field-icon-right">
-								<input type="text" class="input" name="date" maxlength="10"
-								onkeyup="value=this.value.replace(/\D+/g,'')"
-									data-validate="length#<5:现在才2017年" placeholder="请输入公司登记日期">
-							</div>
-						</div>
-
-
-						<div class="form-group">
-							<div class="field">
-								<button class="button button-block bg-main text-big">立即添加</button>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="field text-center">
-								<p class="text-muted text-center">
-									<a href="login.jsp">重新登陆</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</form>
+				<jsp:include page="operate/insert.jsp" />
 			</div>
-			<div class="tab-panel" id="searchAll">..2341234.</div>
-			<div class="tab-panel" id="search">.sdfh.asdf.</div>
-			<div class="tab-panel" id="delete">.sdfh.asdf.</div>
-			<div class="tab-panel" id="update">.sdfh.asdf.</div>
-
+			<div class="tab-panel" id="searchAll">
+				<jsp:include page="operate/searchAll.jsp" />
+			</div>
+			<div class="tab-panel" id="search">
+				<jsp:include page="operate/search.jsp" />
+			</div>
+			<div class="tab-panel" id="delete">
+				<jsp:include page="operate/delete.jsp" />
+			</div>
+			<div class="tab-panel" id="update">
+				<jsp:include page="operate/update.jsp" />
+			</div>
 		</div>
+
+	</div>
 	</div>
 
 
