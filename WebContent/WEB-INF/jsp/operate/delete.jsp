@@ -1,17 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="utf-8"%>
 
-施工队正在施工中！！！！！
-	<!--
-	<form action="/SuperCompanyManager/deleteServlet" method="POST">
-		请输入你想删除企业的编号：
-		<br>
-		<input type="text" name="id" />
-		<br>
-		<input type="submit" value="删除">
-		<br>
-		<a href="login.jsp">这里</a> 重新登陆
-	</form
-	
-	>
-	-->
+<form action="/SuperCompanyManager/deleteServlet" method="POST">
+	<div class="" style="padding: 30px;">
+		<div class="label">
+			<label for="name"> 请输入你想删除企业的编号： </label>
+		</div>
+		<div class="form-group">
+			<div class="field field-icon-right">
+				<input type="text" class="input" name="id" maxlength="5"
+					onkeyup="value=this.value.replace(/\D+/g,'')"
+					data-validate="required:请填写公司编号,length#>=1:如果不清楚编号，可以查询"
+					placeholder="请输入公司编号">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="field">
+				<button class="button button-block bg-main text-big">删除！删除！</button>
+			</div>
+		</div>
+	</div>
+</form>

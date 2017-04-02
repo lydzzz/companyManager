@@ -13,9 +13,6 @@
 					placeholder="请输入你想查询的关键字	">
 			</div>
 		</div>
-
-
-
 		<div class="form-group">
 			<div class="field">
 				<button class="button button-block bg-main text-big">搜一下试试</button>
