@@ -38,6 +38,9 @@ public class DBUtil {
 		System.out.println("Success loading Oracle Sql Driver!");
 	}
 
+	/**
+	 * πÿ±’¡¨Ω”
+	 */
 	public void close() {
 		try {
 			stmt.close();
@@ -122,7 +125,8 @@ public class DBUtil {
 		boolean returnValue = true;
 		String sql = "SELECT * FROM tbl_company";
 		ResultSet rs = null;
-
+		System.out.println("###@@");
+		System.out.println(com.getName() + "###");
 		try {
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
@@ -143,7 +147,7 @@ public class DBUtil {
 		}
 		return returnValue;
 	}
-	
+
 	public boolean updateCom(Company com) {
 		boolean returnValue = false;
 		String sql = "SELECT * FROM tbl_company";
@@ -167,7 +171,6 @@ public class DBUtil {
 		}
 		return returnValue;
 	}
-
 
 	public List<Company> searchCompany(String key) {
 		String sql = "SELECT * FROM tbl_company where (com_id like '%" + key + "' or com_name like '%" + key

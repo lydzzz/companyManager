@@ -25,7 +25,8 @@ public class InsertServlet extends HttpServlet {
 		com.setType(request.getParameter("type"));
 		com.setIntroduction(request.getParameter("introduction"));
 		com.setDate(request.getParameter("date"));
-		com.setNumOfPeople(Integer.parseInt("numOfPeo"));
+		com.setNumOfPeople(Integer.parseInt(request.getParameter("numOfPeo")));
+
 		DBUtil db = new DBUtil();
 		boolean canInsert = db.insertCom(com);
 		if (canInsert) {
