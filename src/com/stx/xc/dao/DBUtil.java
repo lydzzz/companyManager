@@ -125,13 +125,11 @@ public class DBUtil {
 		boolean returnValue = true;
 		String sql = "SELECT * FROM tbl_company";
 		ResultSet rs = null;
-		System.out.println("###@@");
-		System.out.println(com.getName() + "###");
 		try {
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				String userNameInDB = rs.getString("com_name");
-				if (userNameInDB.equals(com.getName())) {
+				String usernameInDB = rs.getString("com_name");
+				if (usernameInDB.equals(com.getName())) {
 					returnValue = false;
 					break;
 				}
@@ -139,7 +137,8 @@ public class DBUtil {
 			if (returnValue) {
 				String s = "insert into tbl_company values(com_id_seq.nextval, '" + com.getName() + "', '"
 						+ com.getType() + "', " + com.getNumOfPeople() + ", '" + com.getIntroduction() + "', '"
-						+ com.getDate() + "'";
+						+ com.getDate() + "')";
+				// System.out.println(s);
 				stmt.executeUpdate(s);
 			}
 		} catch (SQLException e) {
