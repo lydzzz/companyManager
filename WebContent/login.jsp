@@ -16,6 +16,7 @@
 <script src="pintuer/respond.js"></script>
 </head>
 <body>
+	<jsp:include page="/navigation.jsp" />
 
 	<div align="center">
 		<form action="/SuperCompanyManager/LoginServlet" method="post">

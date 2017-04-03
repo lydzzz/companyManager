@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>登陆成功</title>
+<title>查询结果</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="关键词" />
 <meta name="description" content="描述" />
@@ -21,7 +21,7 @@
 <script src="pintuer/respond.js"></script>
 </head>
 <body>
-
+	<jsp:include page="/navigation.jsp" />
 	<table class="table">
 		<tr>
 			<th>编号</th>
@@ -32,7 +32,7 @@
 			<th>登记日期</th>
 		</tr>
 		<%
-			List<Company> coms = (ArrayList<Company>)request.getAttribute("coms");
+			List<Company> coms = (ArrayList<Company>) request.getAttribute("coms");
 			for (Company com : coms) {
 				out.println("<tr>");
 				out.println("<td> " + com.getId() + " </td>");

@@ -17,6 +17,8 @@
 </head>
 </head>
 <body>
+	<jsp:include page="/navigation.jsp" />
+
 	<div align="center">
 		<form action="/SuperCompanyManager/register" method="POST">
 			<div class="panel padding" style="width: 450px; text-align: left;">
@@ -34,7 +36,7 @@
 						<div class="field field-icon-right">
 							<input type="text" class="input" name="username" maxlength="50"
 								value=""
-							 	data-validate="required:请填写用户名/账号,username:请输入英文字母开头的字母、下划线、数字,length#<50:字数在0-50个" 
+								data-validate="required:请填写用户名/账号,username:请输入英文字母开头的字母、下划线、数字,length#<50:字数在0-50个"
 								placeholder="英文字母开头的字母、下划线、数字">
 							<!--  	data-validate="required:请填写用户名/账号,username:请输入英文字母开头的字母、下划线、数字,ajax#(demo/getdata.html?username={value}):该账号已存在,length#<50:字数在0-50个" -->
 						</div>
@@ -45,8 +47,8 @@
 					</div>
 					<div class="form-group">
 						<div class="field field-icon-right">
-							<input type="password" class="input" name="password" maxlength="50"
-								value=""
+							<input type="password" class="input" name="password"
+								maxlength="50" value=""
 								data-validate="required:请填写密码,username:请输入英文字母开头、下划线、数字,length#<50:字数在0-50个"
 								placeholder="英文字母开头、下划线、数字">
 						</div>
@@ -57,8 +59,8 @@
 					</div>
 					<div class="form-group">
 						<div class="field field-icon-right">
-							<input type="password" class="input" name="passwordok" maxlength="50"
-								value=""
+							<input type="password" class="input" name="passwordok"
+								maxlength="50" value=""
 								data-validate="required:请填写密码,username:请输入英文字母开头、下划线、数字,repeat#password:两次输入的密码不一致，请检查,length#<50:字数在0-50个"
 								placeholder="英文字母开头、下划线、数字">
 						</div>

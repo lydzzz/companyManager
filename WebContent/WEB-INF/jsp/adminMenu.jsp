@@ -18,6 +18,7 @@
 <script src="pintuer/respond.js"></script>
 </head>
 <body>
+	<jsp:include page="/navigation.jsp" />
 	欢迎你！尊贵的管理员！
 
 	<br>

@@ -18,6 +18,7 @@
 <script src="pintuer/respond.js"></script>
 </head>
 <body>
+		<jsp:include page="/navigation.jsp" />
 	尊敬的客户！欢迎你！
 
 	<br>
