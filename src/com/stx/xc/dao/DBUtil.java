@@ -172,9 +172,10 @@ public class DBUtil {
 	}
 
 	public List<Company> searchCompany(String key) {
-		String sql = "SELECT * FROM tbl_company where (com_id like '%" + key + "' or com_name like '%" + key
-				+ "' or com_type like '%" + key + "' or com_num_of_peo like '%" + key + "' or com_introduction like '%"
-				+ key + "' or com_date like '%" + key + "')";
+		String sql = "SELECT * FROM tbl_company where (com_id like '%" + key + "%' or com_name like '%" + key
+				+ "%' or com_type like '%" + key + "%' or com_num_of_peo like '%" + key
+				+ "%' or com_introduction like '%" + key + "%' or com_date like '%" + key + "%')";
+		System.out.println(sql);
 		ResultSet rs = null;
 
 		List<Company> res = new ArrayList<>();
@@ -182,7 +183,7 @@ public class DBUtil {
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				Company com = new Company();
-				com.setId(rs.getInt("com_name"));
+				com.setId(rs.getInt("com_id"));
 				com.setName(rs.getString("com_name"));
 				com.setType(rs.getString("com_type"));
 				com.setNumOfPeople(rs.getInt("com_num_of_peo"));
