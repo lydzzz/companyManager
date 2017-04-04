@@ -2,6 +2,7 @@ package com.stx.xc.web;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +24,8 @@ public class DeleteServlet extends HttpServlet {
 		DBUtil db = new DBUtil();// 构建数据库对象
 		boolean canDelete = db.deleteCom(id);
 		if (canDelete) {
-			// 输出删除成功
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/accept.jsp");
+			dispatcher.forward(request, response);
 		} else {
 			// 删除失败
 		}

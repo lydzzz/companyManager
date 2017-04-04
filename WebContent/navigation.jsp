@@ -3,7 +3,7 @@
 <div class="navbar">
 	<div class="navbar-head">
 		<button class="button icon-navicon" data-target="#navbar1"></button>
-		<a href="#"> <img src="双体|星辰一部.logo" />
+		<a href="#"> <img src="双体星辰一部.png" height="40"/>
 		</a>
 	</div>
 	<div class="navbar-body nav-navicon" id="navbar1">
@@ -19,3 +19,5 @@
 		</ul>
 	</div>
 </div>
+
+

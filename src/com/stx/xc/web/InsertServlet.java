@@ -2,6 +2,7 @@ package com.stx.xc.web;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,7 +31,8 @@ public class InsertServlet extends HttpServlet {
 		DBUtil db = new DBUtil();
 		boolean canInsert = db.insertCom(com);
 		if (canInsert) {
-			// 插入成功
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/accept.jsp");
+			dispatcher.forward(request, response);
 		} else {
 			// 插入失败 重名
 		}

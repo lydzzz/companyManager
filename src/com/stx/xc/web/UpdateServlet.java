@@ -2,6 +2,7 @@ package com.stx.xc.web;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +29,8 @@ public class UpdateServlet extends HttpServlet {
 		DBUtil db = new DBUtil();
 		boolean canUpdate = db.updateCom(com);
 		if (canUpdate) {
-			// 更新成功
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/accept.jsp");
+			dispatcher.forward(request, response);
 		} else {
 			// 更新失败 没有这个公司
 		}
