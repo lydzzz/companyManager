@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="utf-8"%>
-这里需要用ajax完善,施工队正在施工中！！！！！
+<!-- 这里需要用ajax完善,施工队正在施工中！！！！！ -->
 <form action="/SuperCompanyManager/updateServlet" method="POST">
 	<div class="" style="padding: 30px;">
 		<div class="label">

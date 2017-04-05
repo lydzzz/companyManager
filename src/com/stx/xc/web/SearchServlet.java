@@ -22,6 +22,9 @@ public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		response.setHeader("Content-type", "text/html;charset=utf-8");
 		String key = request.getParameter("key");
 		System.out.println(key + " : key!!!");
 		DBUtil db = new DBUtil();// 构建数据库对象

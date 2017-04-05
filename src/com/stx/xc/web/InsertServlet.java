@@ -21,6 +21,9 @@ public class InsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		response.setHeader("Content-type", "text/html;charset=utf-8");
 		Company com = new Company();
 		com.setName(request.getParameter("name"));
 		com.setType(request.getParameter("type"));
@@ -28,6 +31,7 @@ public class InsertServlet extends HttpServlet {
 		com.setDate(request.getParameter("date"));
 		com.setNumOfPeople(Integer.parseInt(request.getParameter("numOfPeo")));
 
+		System.out.println(com.getName());
 		DBUtil db = new DBUtil();
 		boolean canInsert = db.insertCom(com);
 		if (canInsert) {
